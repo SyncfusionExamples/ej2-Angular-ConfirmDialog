@@ -7,7 +7,7 @@ By using content and buttons property, we can create confirmation dialog. Please
 ```
 <ej-dialog #ejDialog header="Alert Dialog" [visible] = false [content] = ContainerContent [target]='targetElement' [buttons]='buttons' width='250px'>
     </ej-dialog>
-    ```
+```
 
 
 ## Installing and Running Application
