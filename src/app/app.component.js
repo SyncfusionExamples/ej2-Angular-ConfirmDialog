@@ -27,12 +27,15 @@ var AppComponent = (function () {
         }
     };
     AppComponent.prototype.ngOnInit = function () {
-        this.hideDialog = function (event) {
+        this.okClick = function (event) {
+            window.location.href = 'https://www.syncfusion.com/company/about-us';
+        };
+        this.cancelClick = function (event) {
             this.ejDialog.hide();
         };
         this.buttons = [
             {
-                'click': this.hideDialog.bind(this),
+                'click': this.okClick.bind(this),
                 // Accessing button component properties by buttonModel property
                 buttonModel: {
                     content: 'OK',
@@ -41,7 +44,7 @@ var AppComponent = (function () {
                 }
             },
             {
-                'click': this.hideDialog.bind(this),
+                'click': this.cancelClick.bind(this),
                 buttonModel: {
                     content: 'Cancel',
                 }
@@ -57,7 +60,7 @@ __decorate([
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <br/>\n    <br/>\n    <span> Do you want to save changes? </span>\n    <ej-dropdownlist id='ddlelement' [dataSource]='data' width=\"200px\" (change)=\"onOpenDialog($event)\" placeholder = 'Select your option'></ej-dropdownlist>\n    <ej-dialog #ejDialog header=\"Alert Dialog\" [visible] = false [content] = ContainerContent [target]='targetElement' [buttons]='buttons' width='250px'>\n    </ej-dialog>"
+        template: "\n    <br/>\n    <br/>\n    <span> Do you want to save changes? </span>\n    <ej-dropdownlist id='ddlelement' [dataSource]='data' width=\"200px\" (change)=\"onOpenDialog($event)\" placeholder = 'Select option'></ej-dropdownlist>\n    <ej-dialog #ejDialog header=\"Confirmation Dialog\" [visible] = false [content] = ContainerContent [target]='targetElement' [buttons]='buttons' width='250px'>\n    </ej-dialog>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
